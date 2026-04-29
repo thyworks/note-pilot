@@ -1,0 +1,35 @@
+import{_ as s,o as n,c as e,ae as t}from"./chunks/framework.y3HA5S76.js";const u=JSON.parse('{"title":"フォルダ構成とファイルの保存場所","description":"","frontmatter":{},"headers":[],"relativePath":"guide/folder-structure.md","filePath":"guide/folder-structure.md"}'),i={name:"guide/folder-structure.md"};function p(l,a,d,o,c,r){return n(),e("div",null,[...a[0]||(a[0]=[t(`<h1 id="フォルダ構成とファイルの保存場所" tabindex="-1">フォルダ構成とファイルの保存場所 <a class="header-anchor" href="#フォルダ構成とファイルの保存場所" aria-label="Permalink to &quot;フォルダ構成とファイルの保存場所&quot;">​</a></h1><h2 id="全体のフォルダ構成" tabindex="-1">全体のフォルダ構成 <a class="header-anchor" href="#全体のフォルダ構成" aria-label="Permalink to &quot;全体のフォルダ構成&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>your-project/                    ← プロジェクトルート</span></span>
+<span class="line"><span>├── .claude/</span></span>
+<span class="line"><span>│   └── commands/</span></span>
+<span class="line"><span>│       └── np/                  ← スラッシュコマンド（アカウント作成時に自動配置）</span></span>
+<span class="line"><span>│           ├── write.md</span></span>
+<span class="line"><span>│           ├── review.md</span></span>
+<span class="line"><span>│           ├── post.md</span></span>
+<span class="line"><span>│           ├── learn.md</span></span>
+<span class="line"><span>│           ├── plan.md</span></span>
+<span class="line"><span>│           └── account.md</span></span>
+<span class="line"><span>├── CLAUDE.md                    ← @note-pilot/CLAUDE.md を記載</span></span>
+<span class="line"><span>└── note-pilot/                  ← プラグイン本体</span></span>
+<span class="line"><span>    ├── CLAUDE.md</span></span>
+<span class="line"><span>    ├── AGENTS.md</span></span>
+<span class="line"><span>    ├── accounts/                ← アカウント設定ファイル</span></span>
+<span class="line"><span>    │   ├── account-template.md  ← テンプレート（編集不要）</span></span>
+<span class="line"><span>    │   └── {slug}.md            ← /np:account add で自動生成</span></span>
+<span class="line"><span>    ├── articles/                ← 生成された記事（デフォルト）</span></span>
+<span class="line"><span>    │   └── {slug}-article-001-note-paste.md</span></span>
+<span class="line"><span>    ├── reviews/                 ← 校閲レポート（デフォルト）</span></span>
+<span class="line"><span>    │   └── YYYY-MM-DD-{slug}-review.md</span></span>
+<span class="line"><span>    ├── commands/                ← スラッシュコマンド定義（セットアップ元）</span></span>
+<span class="line"><span>    │   └── np/</span></span>
+<span class="line"><span>    ├── knowledge/               ← ルール定義（変更不要）</span></span>
+<span class="line"><span>    │   ├── writing-rules.md</span></span>
+<span class="line"><span>    │   └── review-checklist.md</span></span>
+<span class="line"><span>    ├── templates/               ← 記事テンプレート（変更不要）</span></span>
+<span class="line"><span>    │   └── article.md</span></span>
+<span class="line"><span>    └── tools/                   ← 自動投稿スクリプト</span></span>
+<span class="line"><span>        ├── post-to-note.js</span></span>
+<span class="line"><span>        ├── parse-article.js</span></span>
+<span class="line"><span>        └── package.json</span></span></code></pre></div><h2 id="各ファイルの役割と保存タイミング" tabindex="-1">各ファイルの役割と保存タイミング <a class="header-anchor" href="#各ファイルの役割と保存タイミング" aria-label="Permalink to &quot;各ファイルの役割と保存タイミング&quot;">​</a></h2><h3 id="自動的に作成・更新されるファイル" tabindex="-1">自動的に作成・更新されるファイル <a class="header-anchor" href="#自動的に作成・更新されるファイル" aria-label="Permalink to &quot;自動的に作成・更新されるファイル&quot;">​</a></h3><table tabindex="0"><thead><tr><th>ファイル</th><th>作成タイミング</th><th>説明</th></tr></thead><tbody><tr><td><code>accounts/{slug}.md</code></td><td>アカウント追加時</td><td>アカウント設定。対話形式で自動生成</td></tr><tr><td><code>.claude/commands/np/</code></td><td>アカウント追加時</td><td>スラッシュコマンド。Claude が自動配置</td></tr><tr><td><code>tools/node_modules/</code></td><td>アカウント追加後</td><td>Node.js があれば Claude が自動インストール</td></tr><tr><td><code>articles/{slug}-article-{no}-note-paste.md</code></td><td>記事作成時</td><td>note貼り付け用の記事本文</td></tr><tr><td><code>reviews/YYYY-MM-DD-{slug}-review.md</code></td><td>校閲時</td><td>校閲チェック結果レポート</td></tr></tbody></table><h3 id="手動でセットアップが必要なファイル" tabindex="-1">手動でセットアップが必要なファイル <a class="header-anchor" href="#手動でセットアップが必要なファイル" aria-label="Permalink to &quot;手動でセットアップが必要なファイル&quot;">​</a></h3><table tabindex="0"><thead><tr><th>ファイル</th><th>操作</th></tr></thead><tbody><tr><td><code>your-project/CLAUDE.md</code></td><td><code>@note-pilot/CLAUDE.md</code> を1行追記</td></tr></tbody></table><h2 id="記事ファイルのパス設定" tabindex="-1">記事ファイルのパス設定 <a class="header-anchor" href="#記事ファイルのパス設定" aria-label="Permalink to &quot;記事ファイルのパス設定&quot;">​</a></h2><p>記事と校閲レポートの保存先は、アカウント設定で変更できます。</p><div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">output_dir</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;articles&quot;</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">   # 記事の保存先（note-pilot/articles/）</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">review_dir</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;reviews&quot;</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">    # レポートの保存先（note-pilot/reviews/）</span></span></code></pre></div><p>パスは <code>note-pilot/</code> フォルダからの相対パスです。別の場所に保存したい場合は変更してください。</p><div class="language-yaml vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">yaml</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># 例: プロジェクトルートの直下に保存する場合</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">output_dir</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;../my-articles&quot;</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D;">review_dir</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&quot;../my-reviews&quot;</span></span></code></pre></div><h2 id="注意事項" tabindex="-1">注意事項 <a class="header-anchor" href="#注意事項" aria-label="Permalink to &quot;注意事項&quot;">​</a></h2><ul><li><code>account-template.md</code> は削除しないでください（アカウント追加で参照されます）</li><li><code>articles/</code> と <code>reviews/</code> は初回実行時に自動で作成されます</li><li><code>tools/.chrome-profile/</code> はChrome自動投稿用のプロファイルです。<code>.gitignore</code> に追加してください</li></ul>`,15)])])}const k=s(i,[["render",p]]);export{u as __pageData,k as default};

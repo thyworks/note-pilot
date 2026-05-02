@@ -18,6 +18,7 @@ export default defineConfig({
         items: [
           { text: 'note-pilotとは', link: '/guide/getting-started' },
           { text: 'セットアップ', link: '/guide/setup' },
+          { text: '使用イメージ', link: '/guide/daily-usage' },
         ],
       },
       {
@@ -29,6 +30,8 @@ export default defineConfig({
           { text: 'アイキャッチ画像を生成する', link: '/guide/image-generation' },
           { text: '校閲する', link: '/guide/review' },
           { text: '投稿する', link: '/guide/posting' },
+          { text: 'ナレッジを追加する', link: '/guide/knowledge' },
+          { text: '連載計画を立てる', link: '/guide/plan' },
         ],
       },
       {

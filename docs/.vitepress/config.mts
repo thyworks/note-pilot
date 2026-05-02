@@ -23,8 +23,10 @@ export default defineConfig({
       {
         text: '使い方',
         items: [
+          { text: 'フォルダ構成', link: '/guide/folder-structure' },
           { text: 'アカウントを管理する', link: '/guide/accounts' },
           { text: '記事を書く', link: '/guide/writing' },
+          { text: 'アイキャッチ画像を生成する', link: '/guide/image-generation' },
           { text: '校閲する', link: '/guide/review' },
           { text: '投稿する', link: '/guide/posting' },
         ],
@@ -33,6 +35,12 @@ export default defineConfig({
         text: 'リファレンス',
         items: [
           { text: 'コマンド一覧', link: '/reference/commands' },
+        ],
+      },
+      {
+        text: 'その他',
+        items: [
+          { text: 'ライセンス', link: '/license' },
         ],
       },
     ],

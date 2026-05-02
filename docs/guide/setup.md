@@ -6,65 +6,104 @@
 
 ```
 your-project/
-├── CLAUDE.md       ← あなたのCLAUDE.md
+├── CLAUDE.md       ← あなたのCLAUDE.md（次の手順で作成）
 └── note-pilot/     ← ここに配置
     ├── CLAUDE.md
     ├── AGENTS.md
     └── ...
 ```
 
-## 2. CLAUDE.mdにインポートを追加する
+## 2. CLAUDE.mdを作成・編集する
 
-あなたのプロジェクトの `CLAUDE.md` に以下を追加します。
+CLAUDE.md は Claude Code がプロジェクトを開いたときに自動で読み込む設定ファイルです。
+
+### CLAUDE.md がまだない場合
+
+プロジェクトのルートに `CLAUDE.md` を新規作成し、以下の1行を書きます。
 
 ```markdown
 @note-pilot/CLAUDE.md
 ```
 
-これだけで、Claude Codeがnote-pilotのスキルを認識します。
+### CLAUDE.md がすでにある場合
 
-## 3. アカウント設定ファイルを作成する
+既存の内容はそのままに、ファイルの先頭か末尾に1行追加します。
 
-`note-pilot/accounts/` フォルダに、あなたのnoteアカウント設定ファイルを作成します。
-
-`account-template.md` をコピーして始めましょう。
-
-```bash
-cp note-pilot/accounts/account-template.md note-pilot/accounts/my-account.md
+```markdown
+@note-pilot/CLAUDE.md
 ```
 
-ファイルを開いて、以下の項目を設定してください。
+### CLAUDE.md の配置場所について
 
-```yaml
-account_name: "あなたのアカウント名"
-account_slug: "my-account"
-note_url: "https://note.com/@yourhandle"
-self_intro_url: "https://note.com/@yourhandle/n/自己紹介記事のID"
+| 場所 | 適用範囲 |
+|------|---------|
+| `~/.claude/CLAUDE.md` | 全プロジェクト共通 |
+| `your-project/CLAUDE.md` | そのフォルダのみ（推奨） |
+
+## 3. アカウントを作成する
+
+Claude Code で以下のように話しかけます。
+
+```
+アカウントを追加して
 ```
 
-## 4. 自動投稿ツールをセットアップする（任意）
+または `/np:account` コマンドを使います。
 
-`/np:post` コマンドで自動投稿を使う場合は、依存パッケージをインストールします。
+対話形式で以下の項目を質問されます。**手動でファイルを編集する必要はありません。**
 
-```bash
-cd note-pilot/tools
-npm install
+1. アカウントの表示名
+2. URLスラッグ（英数字・ハイフン）
+3. noteアカウントの有無
+4. （あれば）note URL と自己紹介記事URL
+5. 文体・スタイル
+6. 扱うテーマ
+7. 書かないこと
+8. ターゲット読者
+9. タグ候補
+10. 次回予告の候補テーマ
+
+全て回答すると `note-pilot/accounts/{slug}.md` が自動生成されます。
+
+アカウント作成と同時に `/np:write`、`/np:review`、`/np:post` などのスラッシュコマンドも自動で登録されます。
+
+## 4. 自動投稿ツールのセットアップ
+
+`/np:post` コマンドで自動投稿を使う場合は **Node.js** が必要です。
+
+Node.js がインストールされていれば、アカウント作成後に Claude が自動でツールをセットアップします。
+
+::: info
+Node.js が入っていない場合は [nodejs.org](https://nodejs.org)（LTS版推奨）からインストールしてください。Node.js がなくても記事作成・校閲は使えます。
+:::
+
+## 5. アイキャッチ画像生成の設定（オプション）
+
+`/np:write` で記事を作成するたびにアイキャッチ画像（1280×670px）を自動生成できます。使用するには **Gemini API キー** が必要です。
+
+### API キーを取得する
+
+[Google AI Studio](https://aistudio.google.com/app/apikey) にアクセスし、API キーを作成してください（無料枠あり）。
+
+### `.env` ファイルにキーを書き込む
+
+`note-pilot/skills/gemini-image/.env` をテキストエディタで開き、以下のように API キーを記入します。
+
+```
+GEMINI_API_KEY=AIzaSy...（ここにキーを貼り付ける）
 ```
 
-Google Chrome がインストールされていることを確認してください。初回実行時に専用プロファイルが作成され、noteへのログインを求められます。以降は自動ログインになります。
+::: warning この設定はファイルを直接編集してください
+API キーはセキュリティ上の理由から対話形式では設定できません。
+テキストエディタで `.env` ファイルを直接編集してください。
+:::
 
-## 5. 動作確認
+設定しない場合、`/np:write` は画像生成をスキップして記事作成・校閲・投稿を通常通り続行します。
 
-Claude Codeで以下のように話しかけてみましょう。
+## 6. 動作確認
 
 ```
 記事を書いて
 ```
 
-または
-
-```
-/np:write
-```
-
-アカウント設定ファイルが見つかれば、記事作成が始まります。
+アカウント設定が見つかれば、記事作成 → 校閲 → 自動投稿の全フローが自動で動きます。

@@ -23,7 +23,8 @@ Claude Codeに自然言語で話しかけます。
 3. `article_series.current_no` を参照して次の連番を決定する
 4. `templates/article.md` をベースに記事を生成する
 5. `{output_dir}/{slug}-article-{連番3桁}-note-paste.md` として保存する
-6. 自動的に `/np:review` を呼び出してチェックを実施する
+6. アイキャッチ画像を自動生成する（`GEMINI_API_KEY` 設定済みの場合のみ）
+7. 自動的に `/np:review` を呼び出してチェックを実施する
 
 ## 記事のルール（自動適用）
 

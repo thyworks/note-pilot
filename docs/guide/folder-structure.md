@@ -4,22 +4,13 @@
 
 ```
 your-project/                    ← プロジェクトルート
-├── .claude/
-│   └── commands/
-│       └── np/                  ← スラッシュコマンド（アカウント作成時に自動配置）
-│           ├── write.md
-│           ├── review.md
-│           ├── post.md
-│           ├── learn.md
-│           ├── plan.md
-│           └── account.md
 ├── CLAUDE.md                    ← @note-pilot/CLAUDE.md を記載
 └── note-pilot/                  ← プラグイン本体
     ├── CLAUDE.md
     ├── AGENTS.md
     ├── accounts/                ← アカウント設定ファイル
     │   ├── account-template.md  ← テンプレート（編集不要）
-    │   └── {slug}.md            ← /np:account add で自動生成
+    │   └── {slug}.md            ← アカウント追加時に自動生成
     ├── articles/                ← 生成された記事（デフォルト）
     │   └── {slug}-article-001-note-paste.md
     ├── reviews/                 ← 校閲レポート（デフォルト）
@@ -51,7 +42,6 @@ your-project/                    ← プロジェクトルート
 | ファイル | 作成タイミング | 説明 |
 |---------|-------------|------|
 | `accounts/{slug}.md` | アカウント追加時 | アカウント設定。対話形式で自動生成 |
-| `.claude/commands/np/` | アカウント追加時 | スラッシュコマンド。Claude が自動配置 |
 | `tools/node_modules/` | アカウント追加後 | Node.js があれば Claude が自動インストール |
 | `articles/{slug}-article-{no}-note-paste.md` | 記事作成時 | note貼り付け用の記事本文 |
 | `reviews/YYYY-MM-DD-{slug}-review.md` | 校閲時 | 校閲チェック結果レポート |

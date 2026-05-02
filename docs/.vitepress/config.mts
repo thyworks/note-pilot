@@ -10,7 +10,7 @@ export default defineConfig({
     nav: [
       { text: 'ホーム', link: '/' },
       { text: 'ガイド', link: '/guide/getting-started' },
-      { text: 'コマンド', link: '/reference/commands' },
+      { text: '機能一覧', link: '/reference/commands' },
     ],
     sidebar: [
       {
@@ -37,7 +37,7 @@ export default defineConfig({
       {
         text: 'リファレンス',
         items: [
-          { text: 'コマンド一覧', link: '/reference/commands' },
+          { text: '機能一覧', link: '/reference/commands' },
         ],
       },
       {

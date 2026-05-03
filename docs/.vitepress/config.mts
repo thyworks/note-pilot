@@ -17,7 +17,7 @@ export default defineConfig({
         text: 'はじめに',
         items: [
           { text: 'note-pilotとは', link: '/guide/getting-started' },
-          { text: 'IDE セットアップ', link: '/guide/ide-setup' },
+          { text: 'VS Code セットアップ', link: '/guide/ide-setup' },
           { text: 'セットアップ', link: '/guide/setup' },
           { text: '使用イメージ', link: '/guide/daily-usage' },
         ],

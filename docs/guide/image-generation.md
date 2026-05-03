@@ -62,6 +62,16 @@ prompt_suffix: "soft bokeh lighting, cinematic atmosphere"
     └── thy-works-article-041-eyecatch.png   ← ここに保存
 ```
 
+## 投稿時の自動アップロード
+
+保存された画像は、自動投稿の際に note のアイキャッチとして**自動でアップロード**されます。手動でのアップロード操作は不要です。
+
+```
+記事作成 → 画像生成（images/ に保存）→ 校閲 → 投稿（アイキャッチも自動アップロード）
+```
+
+画像が存在しない場合（API キー未設定などでスキップされた場合）は、アイキャッチなしで投稿処理が続行されます。
+
 ## 依存パッケージについて
 
 初回実行時に `note-pilot/skills/gemini-image/` で自動的に `npm install` が実行されます。Node.js 18 以上が必要です。

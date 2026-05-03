@@ -4,3 +4,21 @@
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+/* 小画面でヒーローテキストのフォントサイズを縮小 */
+@media (max-width: 480px) {
+  .VPHero .text {
+    font-size: 1.6rem !important;
+    line-height: 1.4 !important;
+  }
+  .VPHero .tagline {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .VPHero .text {
+    font-size: 2rem !important;
+    line-height: 1.4 !important;
+  }
+}

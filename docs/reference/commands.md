@@ -164,4 +164,5 @@ noteに投稿して
 | `target_reader` | string | ターゲット読者の説明 |
 | `tag_candidates` | string[] | タグ候補リスト |
 | `next_topics` | string[] | 次回予告候補リスト |
+| `eyecatch.preferred_template` | number | 前回選択したアイキャッチスタイル番号（1〜4） |
 | 公開済み記事リスト | table | no・タイトル・URL・公開日 |

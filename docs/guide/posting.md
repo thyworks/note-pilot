@@ -21,8 +21,9 @@ noteに投稿して
 ## 実行される処理
 
 1. 対象mdファイルを特定する
-2. 最新の校閲レポートを確認し、status が OK であることを確認する
-3. `tools/post-to-note.js` を実行する
+2. アカウントの `status` を確認する（`preparing` の場合は投稿不可・`paused` の場合は確認）
+3. 最新の校閲レポートを確認し、status が OK であることを確認する
+4. `tools/post-to-note.js` を実行する
 
 ```bash
 node note-pilot/tools/post-to-note.js "{mdファイルのパス}"
@@ -50,7 +51,7 @@ Playwrightが実際のChromeを操作して、以下を自動入力します。
 
 初回は専用Chromeプロファイルが作成され、ブラウザが開きます。noteにログインしてください。セッションは `.chrome-profile/` に保存され、以降は自動ログインになります。
 
-`.chrome-profile/` は `.gitignore` に追加することを推奨します。
+セッションは `tools/.chrome-profile/` に保存されます。このフォルダはすでに `.gitignore` に含まれているため、Git 管理から除外されます。
 
 ## 投稿完了後
 

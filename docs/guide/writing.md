@@ -19,12 +19,17 @@ Claude Codeに自然言語で話しかけます。
 ## 実行される処理
 
 1. `accounts/` 内のアカウント設定ファイルを読み込む
-2. `knowledge/writing-rules.md` のルールを確認する
-3. `article_series.current_no` を参照して次の連番を決定する
-4. `templates/article.md` をベースに記事を生成する
-5. `{output_dir}/{slug}-article-{連番3桁}-note-paste.md` として保存する
-6. アイキャッチ画像を自動生成する（`GEMINI_API_KEY` 設定済みの場合のみ）
-7. 自動的に校閲チェックを実施する
+2. アカウントの `status` を確認する（`paused` の場合は作成するか確認）
+3. `knowledge/writing-rules.md` のルールを確認する
+4. `article_series.current_no` を参照して次の連番を決定する
+5. `templates/article.md` をベースに記事を生成する
+6. `{output_dir}/{slug}-article-{連番3桁}-note-paste.md` として保存する
+7. アイキャッチ画像を生成する（`GEMINI_API_KEY` 設定済みの場合のみ）
+   - 4種類のスタイルテンプレートが表示され、選択を求められます
+   - タイトルテキストを入れるか・色味の調整があるかを確認してから生成されます
+   - 前回選んだスタイルは「（前回）」として表示されます
+8. 自動的に校閲チェックを実施する
+9. 校閲が全項目 OK になったら自動投稿へ進む（`active` アカウントの場合）
 
 ## 記事のルール（自動適用）
 

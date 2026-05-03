@@ -83,7 +83,7 @@ Node.js がインストールされていれば、アカウント作成後に Cl
 
 ### API キーを取得する
 
-[Google AI Studio](https://aistudio.google.com/app/apikey) にアクセスし、API キーを作成してください（無料枠あり）。
+[Google AI Studio](https://aistudio.google.com/app/apikey) にアクセスし、API キーを作成してください。**有料プランが必要です。**
 
 ### `.env` ファイルにキーを書き込む
 

@@ -1,6 +1,6 @@
 # アイキャッチ画像を生成する
 
-記事を作成すると、記事と同時に **1280×670px** のアイキャッチ画像が自動生成されます。Google の Imagen 4 を使用し、アカウントのブランドカラーに合わせた統一感のあるビジュアルを自動で作ります。
+記事を作成すると、記事と同時に **1280×670px** のアイキャッチ画像が自動生成されます。**Gemini 2.5 Flash Image**（`gemini-3.1-flash-image-preview`）を使用し、アカウントのブランドカラーに合わせた統一感のあるビジュアルを自動で作ります。
 
 `GEMINI_API_KEY` が未設定の場合は画像生成をスキップして記事作成・校閲・投稿を通常通り続行します。
 
@@ -8,7 +8,7 @@
 
 ### 1. Gemini API キーを取得する
 
-[Google AI Studio](https://aistudio.google.com/app/apikey) にアクセスし、API キーを作成してください（無料枠あり）。
+API キーの取得手順は [Gemini API キーの取得](./gemini-api-key) をご覧ください。取得したキーを次のステップで設定します。
 
 ### 2. `.env` ファイルにキーを書き込む
 
@@ -79,5 +79,5 @@ npm install
 |------|------|
 | 「APIキー未設定」でスキップされる | `skills/gemini-image/.env` に `GEMINI_API_KEY` を記入したか確認 |
 | 401 / 403 エラー | API キーが無効。[Google AI Studio](https://aistudio.google.com/app/apikey) で再発行 |
-| 429 エラー（クォータ超過）| 無料枠の上限に達した。Google AI Studio でご確認ください |
+| 429 エラー（クォータ超過）| 利用上限に達した。Google AI Studio の課金状況を確認してください |
 | `sharp が見つかりません` | `cd note-pilot/skills/gemini-image && npm install` を実行 |

@@ -29,6 +29,7 @@ export default defineConfig({
           { text: 'アカウントを管理する', link: '/guide/accounts' },
           { text: '記事を書く', link: '/guide/writing' },
           { text: 'アイキャッチ画像を生成する', link: '/guide/image-generation' },
+          { text: 'Gemini API キーの取得', link: '/guide/gemini-api-key' },
           { text: '校閲する', link: '/guide/review' },
           { text: '投稿する', link: '/guide/posting' },
           { text: 'ナレッジを追加する', link: '/guide/knowledge' },

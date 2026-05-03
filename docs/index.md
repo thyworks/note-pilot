@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "note-pilot"
-  text: "noteクリエイターのための\nClaude Codeプラグイン"
+  text: "noteクリエイターのためのClaude Codeプラグイン"
   tagline: ナレッジ蓄積・記事作成・校閲・自動投稿を一気通貫で。
   actions:
     - theme: brand

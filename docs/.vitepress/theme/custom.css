@@ -1,0 +1,6 @@
+/* Hero セクションのレスポンシブ対応 */
+.VPHero .text,
+.VPHero .tagline {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

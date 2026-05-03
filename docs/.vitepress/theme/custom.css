@@ -1,24 +1,16 @@
 /* Hero セクションのレスポンシブ対応 */
-.VPHero .text,
-.VPHero .tagline {
+.VPHeroInfo .text,
+.VPHeroInfo .tagline {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
-/* 小画面でヒーローテキストのフォントサイズを縮小 */
-@media (max-width: 480px) {
-  .VPHero .text {
-    font-size: 1.6rem !important;
+@media (max-width: 639px) {
+  .VPHeroInfo .text {
+    font-size: 1.75rem !important;
     line-height: 1.4 !important;
   }
-  .VPHero .tagline {
+  .VPHeroInfo .tagline {
     font-size: 0.95rem !important;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-  .VPHero .text {
-    font-size: 2rem !important;
-    line-height: 1.4 !important;
   }
 }

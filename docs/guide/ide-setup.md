@@ -2,8 +2,6 @@
 
 note-pilot は Claude Code が動く環境であればどこでも使えます。ここでは **Visual Studio Code** での使い方を説明します。
 
----
-
 ## 1. VS Code をインストールする
 
 [https://code.visualstudio.com/](https://code.visualstudio.com/) にアクセスし、お使いの OS 向けのインストーラーをダウンロードしてください。
@@ -85,8 +83,6 @@ note-pilot を日常的に使うなら **Pro ($20/月)** で十分です。
 
 次のステップ「4. ログインする」に進んでください。
 
----
-
 ## 4. VS Code から Claude Code にログインする
 
 拡張機能を起動すると、ログインを求める画面が表示されます。
@@ -100,8 +96,6 @@ note-pilot を日常的に使うなら **Pro ($20/月)** で十分です。
 ::: info 認証が完了しない場合
 ブラウザでの認証後に VS Code が自動で戻らない場合は、手動で VS Code の画面に切り替えてください。数秒で反映されます。
 :::
-
----
 
 ## 5. Claude Code を起動する
 
@@ -141,8 +135,6 @@ note-pilot を日常的に使うなら **Pro ($20/月)** で十分です。
 | 新しいタブで開く | `Ctrl+Shift+Esc` | `Cmd+Shift+Esc` |
 | ファイル参照を挿入（@メンション） | `Alt+K` | `Option+K` |
 | プロンプト内で改行 | `Shift+Enter` | `Shift+Enter` |
-
----
 
 ## トラブルシューティング
 
